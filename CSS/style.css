@@ -147,8 +147,9 @@ span {
 
 /* Site Title */
 main .site-title {
-  background: url("/Images/Bgimg1.png");
+  background: url("../Images/bgimg3.jpg");
   background-size: cover;
+  background-position: center;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -158,6 +159,11 @@ main .site-title .site-background {
   padding-top: 10rem;
   text-align: center;
   color: var(--white);
+}
+
+main .site-title .site-background h1,
+main .site-title .site-background h3 {
+  text-shadow: 3px 3px black;
 }
 
 main .site-title .btn {
