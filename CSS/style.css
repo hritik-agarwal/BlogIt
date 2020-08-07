@@ -1,0 +1,226 @@
+@import url(./fonts.css);
+
+:root {
+  /* Fonts */
+  --Arvo: "Arvo", cursive;
+  --Anton: "Anton", cursive;
+  --Josefin: "Josefin", cursive;
+  --Lexend: "Lexend", cursive;
+  --Livvic: "Livvic", cursive;
+
+  /* Colours */
+  --text-gray: #3f4954;
+  --text-light: #686666da;
+  --bg-color: #0f0f0f;
+  --white: #ffffff;
+  --midnight: #104f55;
+
+  /* Gradients */
+  --sky: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+
+html,
+body {
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-gray);
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+h1 {
+  font-family: var(--Lexend);
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-family: var(--Lexend);
+}
+
+h3 {
+  font-family: var(--Arvo);
+  font-size: 1.3rem;
+}
+
+button.btn {
+  border: none;
+  border-radius: 2rem;
+  padding: 1rem 3rem;
+  font-size: 1rem;
+  font-family: var(--Livvic);
+  cursor: pointer;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+span {
+  font-family: var(--Arvo);
+}
+
+.container {
+  margin: 0 5vw;
+}
+
+/* Navigation */
+.nav-bar {
+  padding: 0 2rem;
+  background-color: white;
+  height: 0rem;
+  min-height: 9vh;
+  overflow: hidden;
+  transition: 1s ease-in-out;
+}
+
+.nav-bar .nav-brand {
+  font-size: 1.6rem;
+  padding: 1rem 0;
+  font-family: var(--Arvo);
+}
+
+.nav-bar .nav-menu {
+  justify-content: space-between;
+}
+
+.nav-bar .toggle-collapse {
+  position: absolute;
+  top: 0%;
+  width: 90%;
+  cursor: pointer;
+  display: none;
+}
+
+.nav-bar .toggle-collapse .toggle-icons {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.7em 0;
+}
+
+.nav-bar .toggle-collapse .toggle-icons i {
+  font-size: 1.4rem;
+  color: var(--text-gray);
+}
+
+.collapse {
+  height: 30rem;
+}
+
+.nav-bar .nav-items {
+  display: flex;
+}
+
+.nav-bar .nav-items .nav-item-link {
+  font-size: 1.1rem;
+  padding: 1.6rem 1rem;
+  position: relative;
+  font-family: var(--Lexend);
+}
+
+.nav-bar .nav-items .nav-item-link:hover {
+  background-color: var(--midnight);
+}
+
+.nav-bar .nav-items .nav-item-link:hover a {
+  color: var(--white);
+}
+
+.nav-bar .social-icons i {
+  padding: 2rem 0.5rem;
+}
+
+.nav-bar .social-icons i:hover {
+  color: #a1c4cf;
+}
+
+/* Main content */
+
+/* Site Title */
+main .site-title {
+  background: url("/Images/Bgimg1.png");
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+main .site-title .site-background {
+  padding-top: 10rem;
+  text-align: center;
+  color: var(--white);
+}
+
+main .site-title .btn {
+  margin: 1.8rem;
+  background: var(--sky);
+}
+
+main .site-title .btn:hover {
+  background: transparent;
+  border: 1px solid var(--white);
+  color: var(--white);
+}
+
+main .site-title h1,
+h3 {
+  margin: 1rem;
+}
+
+/* Blog */
+main .blog {
+  background: url(../Images/Abstract1.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 65%;
+  height: 100vh;
+  width: 100%;
+}
+
+main .blog .blog-post {
+  padding-top: 6rem;
+}
+
+main .blog-post .blog-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 80%;
+  margin: 3rem 2rem;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+main .blog-content .blog-title {
+  padding: 2rem 0;
+}
+
+main .blog-content .btn-blog {
+  padding: 0.7rem 2rem;
+  background: var(--sky);
+  margin: 0.5rem;
+}
+
+main .blog-content span {
+  display: block;
+}
+
+/* Media  Queries */
+@media only screen and (max-width: 750px) {
+  .nav-bar .nav-menu,
+  .nav-bar .nav-items {
+    flex-direction: column;
+  }
+
+  .nav-bar .toggle-collapse {
+    display: initial;
+  }
+}
