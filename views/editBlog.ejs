@@ -1,0 +1,12 @@
+<%- include("header.ejs") -%>
+<div class="container">
+  <form action="/updateBlog" method="POST" class="newBlog">
+    <legend for="title">Title</legend>
+    <input type="text" name="title" placeholder="Title Name" value="<%= blog.title %>"><br>
+    <legend for="title">Content</legend>
+    <textarea name="content" cols="30" rows="10" placeholder="Type your blog here"><%= blog.content %></textarea><br>
+    <input type="hidden" name="blogId" value="<%= blog._id %>">
+    <button type="submit" class="button btn">Edit Blog</button>
+  </form>
+</div>
+<%- include("footer.ejs") -%>

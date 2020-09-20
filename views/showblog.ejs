@@ -1,0 +1,16 @@
+<%- include("header.ejs") -%>
+<form action="/deleteBlog" method="post" class="deledit">
+  <button type="submit" class="btn btn-danger" name="blogId" value="<%= blog._id %>">Delete Blog</button>
+</form>
+<form action="/editBlog" method="post" class="deledit">
+  <button type="submit" class="btn btn-ocean" name="blogId" value="<%= blog._id %>">Edit Blog</button>
+</form>
+<div class="container showblog">
+  <div class="blog-content">
+    <div class="blog-title">
+      <h3><%= blog.title %></h3>
+      <p class="blogContentShowBlog"><%= blog.content %> </p>
+    </div>
+  </div>
+</div>
+<%- include("footer.ejs") -%>

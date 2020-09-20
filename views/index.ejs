@@ -1,0 +1,35 @@
+<%- include("header.ejs") -%>
+<!-- Main -->
+<main>
+  <!-- Site Title -->
+  <section class="site-title">
+    <div class="site-background">
+      <h1>Show your Passions to the World</h1>
+      <h3>Click on explore to see what others are making</h3>
+      <a href="/newBlog">
+        <button class="btn">Write New Blog</button>
+      </a>
+    </div>
+  </section>
+
+  <!-- Blogs -->
+  <section>
+    <div class="blog">
+      <div class="container">
+        <div class="owl-carousel owl-theme blog-post">
+          <%  for(let i=0;i<blogs.length;i++){ %>
+          <div class="blog-content">
+            <div class="blog-title">
+              <h3><%= blogs[i].title %></h3>
+              <p><%= blogs[i].content.substr(0,100) %> ..</p>
+              <a href="/blogs/<%= blogs[i]._id %>"><button class="btn btn-blog">Read More</button></a>
+            </div>
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include("footer.ejs") -%>
