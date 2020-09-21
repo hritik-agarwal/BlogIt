@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const ejs = require("ejs");
 const bodyParser = require("body-parser");
 const _ = require("lodash");
+const dbpass = require("./config");
 
 // setting up our app
 const app = express();
@@ -12,7 +13,8 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // setting up database
-mongoose.connect("mongodb+srv://admin-hritik:blog456@blog.ffwyh.mongodb.net/blogDB?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }).catch("Not Connected");
+const uri = "mongodb+srv://admin-hritik:"+dbpass+"@blog.ffwyh.mongodb.net/blogDB?retryWrites=true&w=majority"
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true }).catch("Not Connected");
 
 // blog Schema
 const blogSchema = {
@@ -77,8 +79,6 @@ app.post("/editBlog", (req,res)=>{
 
 app.post("/updateBlog", (req,res)=>{
   const id = req.body.blogId;
-  console.log(req.body);
-  console.log(id);
   Blog.updateOne({_id: id}, {$set: {
     title: req.body.title,
     content: req.body.content
